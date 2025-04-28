@@ -1,0 +1,31 @@
+[project]
+name = "receipts-parser"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Mary"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    # older version of paddle libraries to make it work on WSL
+    "paddlepaddle (==2.6.1)",
+    "paddleocr (==2.7.0.3)"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+packages = [{ include = "receipts_parser", from = "src" }]
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.5"
+
+[tool.pytest.ini_options]
+filterwarnings = [
+  # ignore the warning that is happening due to older version of paddlepaddle
+  # could not be fixed at the momemt as an newer version crashes with WSL
+  "ignore:pkg_resources is deprecated.*:DeprecationWarning",
+]
