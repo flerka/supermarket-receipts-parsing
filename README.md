@@ -36,11 +36,9 @@ poetry run pytest --log-cli-level=DEBUG
 
 ---
 ## Example of the Parsing
-From:
 ![Example of the receipt.](tests/data/test-receipt.jpg)
 
-To:
-[View the json file](tests/data/expected-output-test-receipt.json)
+[Example of the parsed output](tests/data/expected-output-test-receipt.json)
 ---
 
 ## License
